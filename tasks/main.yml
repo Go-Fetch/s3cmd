@@ -1,0 +1,7 @@
+---
+- name: Ensure s3cmd installed
+  pkgin: name=py27-s3cmd state=present
+  sudo: True
+
+- name: Configure s3cmd
+  template: src=s3cfg.j2 dest=/root/.s3cfg
